@@ -1,3 +1,5 @@
+import { data } from "react-router-dom";
+
 let data_set = [
     {id:"aaa",pwd :"aaa", name : "홍길동", addr : '산골짜기'},
     {id:"bbb",pwd :"bbb", name:'김개똥', addr:'개똥별'},
@@ -8,5 +10,17 @@ export const getOne = ( id ) =>
     data_set.filter( (item) => item.id === id )[0];
 export const deleteOne = ( id ) => {
     data_set = data_set.filter( (item) => item.id !== id );
+    return 1;
+}
+export const register = ( user ) => {
+    data_set.push( user );
+    return 1;
+}
+export const modify = ( user ) => {
+    data_set = data_set.map( (item) => item.id === user.id ? user : item );
+    
+    //data_set = data_set.filter( (item) => item.id !== user.id );
+    //data_set = data_set.concat( user );
+    
     return 1;
 }

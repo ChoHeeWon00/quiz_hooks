@@ -16,9 +16,12 @@ function MOneCon() {
     const onDelete = ( id ) => {
         navidate("/member/delete/"+id);
     }
+    const onModify = ( id ) => {
+        navidate("/member/modify/"+id);
+    }
     return (
      <div>
-        <MOneCom data={data} onDelete={onDelete} />
+        <MOneCom onModify={onModify} data={data} onDelete={onDelete} />
      </div>
     );
   }  
